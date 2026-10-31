@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kim o?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="konfeti" aria-hidden="true"></canvas>
+
+  <!-- 1. Ekran: Kim o? -->
+  <section class="ekran aktif" id="ekran-kapi">
+    <div class="kapi">
+      <p class="tak-tak">🚪 tak tak</p>
+      <h1 class="kim-o">Kim o?</h1>
+      <form id="kapi-form" autocomplete="off">
+        <input id="cevap" type="text" placeholder="Cevabını yaz..." aria-label="Cevap" spellcheck="false" autocapitalize="characters">
+        <button class="buton" type="submit">Gönder</button>
+      </form>
+      <p id="mesaj" class="mesaj" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- 2. Ekran: Kutlama -->
+  <section class="ekran" id="ekran-kutlama">
+    <div class="foto-bulanik"></div>
+    <div class="foto"></div>
+    <div class="kutlama-ust">
+      <h1 class="baslik">
+        <span class="satir">İYİ Kİ DOĞDUN</span>
+        <span class="satir">DÜNYANIN EN İYİ PATRONU <span class="kalp">&lt;3&lt;3</span></span>
+      </h1>
+    </div>
+    <div class="kutlama-alt">
+      <div class="butonlar">
+        <button class="buton" data-git="ekran-oyun">🎮 Mini Oyun</button>
+        <button class="buton" data-git="ekran-mum">🕯️ Mumları Üfle</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Ekran: Mini oyun -->
+  <section class="ekran" id="ekran-oyun">
+    <div class="ust-bar">
+      <button class="geri" data-git="ekran-kutlama">← Geri</button>
+      <span class="bosluk"></span>
+      <span>Skor: <b id="skor">0</b></span>
+      <span id="can">❤️❤️❤️</span>
+      <span>⏱ <b id="sure">30</b></span>
+    </div>
+    <div class="oyun-alan">
+      <canvas id="oyun"></canvas>
+      <div class="perde" id="perde">
+        <div class="kart">
+          <h2 id="perde-baslik">Pasta Yakala! 🎂</h2>
+          <div id="perde-metin">
+            <p>🎂 🧁 🎁 yakala, 📅 toplantılardan ve 📧 maillerden kaç!</p>
+            <p class="kucuk">Fareyle, parmağınla ya da ← → tuşlarıyla oyna. 3 canın ve 30 saniyen var.</p>
+          </div>
+          <button class="buton" id="oyun-basla">Başla</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Ekran: Mumları üfle -->
+  <section class="ekran" id="ekran-mum">
+    <div class="ust-bar">
+      <button class="geri" data-git="ekran-kutlama">← Geri</button>
+    </div>
+    <div class="mum-alan">
+      <p class="mum-baslik" id="mum-durum">Mikrofona doğru üfle! 🌬️</p>
+      <div class="pasta">
+        <div class="mumlar" id="mumlar"></div>
+        <div class="kat kat-ust"></div>
+        <div class="kat kat-alt"></div>
+        <div class="tabak"></div>
+      </div>
+      <div class="nefes" aria-hidden="true"><div class="nefes-dolu" id="nefes"></div></div>
+      <p class="ipucu" id="mum-ipucu">Mikrofon izni ver ve üfle. Olmazsa mumlara dokunarak da söndürebilirsin 👆</p>
+      <button class="buton" id="tekrar-yak" hidden>Mumları tekrar yak 🔥</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
